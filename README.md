@@ -5,7 +5,7 @@
 
 HTML・CSS・JavaScript だけで作っていて、フレームワークやライブラリは使っていません。
 
-**サイト：** （公開中）
+**サイト：** https://chi-cha205.github.io/my-quest-log/
 
 ## ページ
 
@@ -46,7 +46,7 @@ HTML・CSS・JavaScript だけで作っていて、フレームワークやラ�
 ## フォルダ構成
 
 ```
-mypage/
+my-quest-log/
 ├── index.html       HOME
 ├── player.html      PLAYER
 ├── projects.html    PROJECTS
