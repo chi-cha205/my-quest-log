@@ -1,0 +1,126 @@
+/* MY QUEST LOG | RESEARCH */
+
+.research-lead {
+    margin: 12px 0 0;
+}
+
+/*研究のカード*/
+.research-card {
+    margin-top: 14px;
+    padding: 20px;
+    background: #141b34;
+    border: 1px solid #485270;
+    border-radius: 4px;
+}
+
+/*「RESEARCH 01 / 2026」の行（.research-card p より強くして黄色にする）*/
+.research-card .card-index {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+}
+
+.research-card h3 {
+    margin: 4px 0 8px;
+    font-size: 1.15rem;
+}
+
+/*「実験内容」などの小見出し：左に黄色い線*/
+.research-card h4 {
+    margin: 18px 0 4px;
+    padding-left: 8px;
+    border-left: 3px solid var(--accent);
+    font-size: 0.95rem;
+}
+
+.research-card p {
+    margin: 0 0 8px;
+    color: var(--muted);
+}
+
+/*これからの研究：点線の枠にする*/
+.research-card--next {
+    border-style: dashed;
+}
+
+/*処理の流れ：箱を横に並べて ▶ でつなぐ*/
+.flow-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: flow;
+}
+
+.flow-list li {
+    padding: 6px 12px;
+    background: #283356;
+    border: 2px solid #62718c;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    counter-increment: flow;
+}
+
+/*箱の頭に「1.」「2.」…と番号を付ける*/
+.flow-list li::before {
+    content: counter(flow) ". ";
+    color: var(--accent);
+}
+
+/*2つ目以降の箱の前に ▶ を出す*/
+.flow-list li + li::before {
+    content: "▶ " counter(flow) ". ";
+}
+
+.research-card .tag-list {
+    margin-top: 16px;
+}
+
+/*レポートPDFへのリンク（PROJECTS の GitHub ボタンと同じ見た目）*/
+.research-links {
+    margin-top: 14px;
+}
+
+.research-link {
+    display: inline-block;
+    padding: 4px 12px;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.research-link:hover {
+    color: var(--bg);
+    background: var(--accent);
+}
+
+/*動きを減らす設定では色の切り替えをすぐにする*/
+@media (prefers-reduced-motion: reduce) {
+    .research-link {
+        transition: none;
+    }
+}
+
+/*スマホ幅：処理の流れを縦に並べる*/
+@media (max-width: 620px) {
+    .research-card {
+        padding: 16px;
+    }
+
+    .flow-list {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /*縦に並ぶので、矢印を下向きにする*/
+    .flow-list li + li::before {
+        content: "▼ " counter(flow) ". ";
+    }
+}

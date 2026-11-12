@@ -1,0 +1,176 @@
+/* MY QUEST LOG | PROJECTS */
+
+.projects-lead {
+    margin: 12px 0 0;
+}
+
+/*作品カードを2列に並べる*/
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 14px;
+}
+
+/*メインの作品は1列で大きく並べる*/
+.card-grid--main {
+    grid-template-columns: 1fr;
+}
+
+.project-card {
+    padding: 20px;
+    background: #141b34;
+    border: 1px solid #485270;
+    border-radius: 4px;
+}
+
+/*画像の代わりの四角い枠*/
+.project-thumb {
+    display: grid;
+    place-items: center;
+    height: 140px;
+    color: var(--accent);
+    background: #233e65;
+    border: 2px solid #62718c;
+    font-size: 3rem;
+}
+
+.project-thumb--model {
+    color: #a9e2ef;
+    background: #3c2f55;
+}
+
+.project-thumb--app {
+    color: #d6f6dc;
+    background: #274b49;
+}
+
+.project-thumb--site {
+    color: var(--accent);
+    background: var(--bg);
+}
+
+/*スクリーンショットを入れたとき：枠いっぱいに表示する*/
+img.project-thumb {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    image-rendering: auto;  /* bodyのpixelatedを画像には効かせない */
+}
+
+.project-card h3 {
+    margin: 4px 0 8px;
+    font-size: 1.15rem;
+}
+
+.project-card p {
+    color: var(--muted);
+}
+
+/*「QUEST 01 / UNITY」の行（.project-card p より強くして黄色にする）*/
+.project-card .card-index {
+    margin: 14px 0 0;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+}
+
+/*メインの作品：画像を左、説明を右に並べ、黄色い枠で目立たせる*/
+.project-card--main {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 22px;
+    align-items: start;
+    border: 2px solid var(--accent);
+}
+
+.project-card--main .project-thumb {
+    height: 200px;
+}
+
+.project-card--main .card-index {
+    margin-top: 0;
+}
+
+/*「★ MAIN QUEST 01」の札*/
+.project-card .main-badge {
+    width: fit-content;
+    margin: 0 0 8px;
+    padding: 2px 8px;
+    color: var(--bg);
+    background: var(--accent);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+/*メインの作品で作った機能の一覧*/
+.feature-list {
+    margin: 8px 0 12px;
+    padding-left: 1.2em;
+    font-size: 0.9rem;
+}
+
+.feature-list li::marker {
+    color: var(--accent);
+}
+
+/*制作中の作品：点線の枠にする*/
+.project-card--wip {
+    border-style: dashed;
+}
+
+.project-thumb--wip {
+    color: var(--text);
+    background: #2a2333;
+}
+
+/*GitHub・動画へのリンク*/
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.project-link {
+    padding: 4px 12px;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.project-link:hover {
+    color: var(--bg);
+    background: var(--accent);
+}
+
+/*動きを減らす設定では色の切り替えをすぐにする*/
+@media (prefers-reduced-motion: reduce) {
+    .project-link {
+        transition: none;
+    }
+}
+
+/*スマホ幅：カードを1列にする*/
+@media (max-width: 620px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-thumb {
+        height: 110px;
+    }
+
+    /*メインの作品も、画像の下に説明を並べる*/
+    .project-card--main {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .project-card--main .project-thumb {
+        height: 150px;
+    }
+}

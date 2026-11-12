@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#101326">
+    <title>PROJECTS | MY QUEST LOG</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap">
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <script src="js/transition.js" defer></script>
+</head>
+<body class="project-page">
+    <div class="page-container">
+        <header class="topbar">
+            <a class="brand" href="index.html">★MY QUEST LOG</a>
+            <span>LV.2026</span>
+        </header>
+    
+        <main id="main-content">
+            <section class="window">
+                <div class="window-header">
+                    <h1 class="window-heading">PROJECTS</h1>
+                    <span class="page-number">02 / PROJECTS</span>
+                </div>
+    
+                <p class="projects-lead">授業での制作課題や、このサイトなどの制作物をまとめています。どれも、ひとりで制作した個人制作の作品です。くわしい内容は、各カードの GitHub から見られます。</p>
+
+                <!--メイン作品-->
+                <h2 class="section-heading">★ MAIN QUEST</h2>
+                <div class="card-grid card-grid--main">
+                    <!--Unity のゲーム-->
+                    <article class="project-card project-card--main">
+                        <img class="project-thumb" src="images/boss-battle.png" alt="Boss Battle Game のプレイ画面">
+                        <div class="project-body">
+                            <p class="main-badge">★ MAIN QUEST 01</p>
+                            <p class="card-index">UNITY / 3D ACTION</p>
+                            <h3>Boss Battle Game</h3>
+                            <p>ボールを投げて、制限時間120秒以内にボス5体を倒す3Dアクションゲームです。</p>
+                            <ul class="feature-list">
+                                <li>ボスのHPバー（Slider）</li>
+                                <li>制限時間のタイマーとスコア表示</li>
+                                <li>ボールの当たり判定</li>
+                                <li>クリア・タイムアップの判定</li>
+                            </ul>
+                            <div class="tag-list">
+                                <span class="tag">Unity</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">授業制作</span>
+                            </div>
+                            <div class="project-links">
+                                <a class="project-link" href="https://github.com/chi-cha205/unity-action-game" target="_blank" rel="noopener">▶ GitHub</a>
+                                <a class="project-link" href="https://youtu.be/2GFIGitg2KA" target="_blank" rel="noopener">▶ プレイ動画</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--このサイト-->
+                    <article class="project-card project-card--main">
+                        <div class="project-thumb project-thumb--site" aria-hidden="true">★</div>
+                        <div class="project-body">
+                            <p class="main-badge">★ MAIN QUEST 02</p>
+                            <p class="card-index">WEB / PORTFOLIO</p>
+                            <h3>MY QUEST LOG</h3>
+                            <p>このサイトです。 レトロなRPG風のデザインで、HTML・CSS・JavaScriptをAIを活用しながら書いて制作しています。</p>
+                            <ul class="feature-list">
+                                <li>画像を使わず、CSSだけで描いたレンガの壁</li>
+                                <li>メニューを選んだときのページ切り替え演出</li>
+                                <li>好きなゲームを切り替えて紹介する MY GAME DATA</li>
+                                <li>スマホでも読みやすいレイアウト</li>
+                            </ul>
+                            <div class="tag-list">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">制作中</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!--今作っている作品-->
+                <h2 class="section-heading">▶ NOW CRAFTING</h2>
+                <div class="card-grid">
+                    <!--爆弾解体ゲーム-->
+                    <article class="project-card project-card--wip">
+                        <div class="project-thumb project-thumb--wip" aria-hidden="true">💣</div>
+                        <p class="card-index">NEW QUEST / GAME</p>
+                        <h3>爆弾解体ゲーム</h3>
+                        <p>現在制作中のゲームです。マインスイーパー×爆弾解体を組み合わせたゲームを構想中です。内容や画面は、完成に近づいたら追加します。</p>
+                        <div class="tag-list">
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">制作中</span>
+                        </div>
+                        <div class="project-links">
+                            <a class="project-link" href="https://github.com/chi-cha205/MineDefuse" target="_blank" rel="noopener">▶ GitHub</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!--その他-->
+                <h2 class="section-heading">◆ SUB QUEST</h2>
+                <div class="card-grid">
+                    <!--Android のタスク管理アプリ-->
+                    <article class="project-card">
+                        <img class="project-thumb" src="images/task-app.png" alt="タスク管理アプリのスクショ">
+                        <p class="card-index">SUB QUEST 01 / ANDROID</p>
+                        <h3>ToDo App</h3>
+                        <p>タスクの追加・編集・完了チェックができるタスク管理アプリ。進捗状況を記号で表示して、ひと目でわかるようにしました。</p>
+                        <div class="tag-list">
+                            <span class="tag">Android Studio</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">未リリース</span>
+                        </div>
+                        <div class="project-links">
+                            <a class="project-link" href="https://github.com/chi-cha205/ToDoapp" target="_blank" rel="noopener">▶ GitHub</a>
+                        </div>
+                    </article>
+
+                    <!--電卓アプリ-->
+                    <article class="project-card">
+                        <img class="project-thumb" src="images/calculator-app.png" alt="電卓アプリのスクショ">
+                        <p class="card-index">SUB QUEST 02 / ANDROID</p>
+                        <h3>Calculator App</h3>
+                        <p>四則演算・小数・連続計算に対応した電卓アプリ。直感的に操作できるシンプルな画面を意識しました。</p>
+                        <div class="tag-list">
+                            <span class="tag">Android Studio</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">未リリース</span>
+                        </div>
+                        <div class="project-links">
+                            <a class="project-link" href="https://github.com/chi-cha205/AndroidCalculator" target="_blank" rel="noopener">▶ GitHub</a>
+                        </div>
+                    </article>
+
+                    <!--Metasequoianのイノシシモデル-->
+                    <article class="project-card">
+                        <img class="project-thumb" src="images/inoshishi-model.png" alt="メタセコイアで作成したイノシシの3Dモデル">
+                        <p class="card-index">SUB QUEST 03 / 3D MODEL</p>
+                        <h3>Metasequoiaによる3Dモデル</h3>
+                        <p>授業で制作した3Dモデル。</p>
+                        <div class="tag-list">
+                            <span class="tag">Metasequoia</span>
+                            <span class="tag">授業制作</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    
+        <footer>
+            <span>★ QUEST CONTINUES... ★</span>
+            <a href="index.html">◀ HOMEにもどる</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/*レンガ壁*/
+
+/* 壁の土台：白く塗っておき、すき間から見える白を目地にする*/
+.renga {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: max(38px, calc((100vw - 860px) / 2));
+    overflow: hidden;
+    background-color: #ffffff;
+    pointer-events: none;
+}
+
+.renga--left {
+    left: 0;
+    border-right: 2px solid #ffffff;
+}
+
+.renga--right {
+    right: 0;
+    border-left: 2px solid #ffffff;
+}
+
+/*レンガの層*/
+.renga::before,
+.renga::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right,
+            transparent 0px,
+            transparent 1px,
+            var(--bg) 1px,
+            var(--bg) 79px,
+            transparent 79px,
+            transparent 80px);
+    background-size: 80px 80px;
+    background-repeat: repeat;
+}
+
+/*偶数段だけを見せる*/
+.renga::before {
+    -webkit-mask-image: repeating-linear-gradient(to bottom,
+            transparent 0px,
+            transparent 1px,
+            #000000 1px,
+            #000000 39px,
+            transparent 39px,
+            transparent 80px);
+    mask-image: repeating-linear-gradient(to bottom,
+            transparent 0px,
+            transparent 1px,
+            #000000 1px,
+            #000000 39px,
+            transparent 39px,
+            transparent 80px);
+}
+
+/*奇数段をレンガを半個分ずらす*/
+.renga::after {
+    background-position: 40px 0;
+    -webkit-mask-image: repeating-linear-gradient(to bottom,
+            transparent 0px,
+            transparent 41px,
+            #000000 41px,
+            #000000 79px,
+            transparent 79px,
+            transparent 80px);
+    mask-image: repeating-linear-gradient(to bottom,
+            transparent 0px,
+            transparent 41px,
+            #000000 41px,
+            #000000 79px,
+            transparent 79px,
+            transparent 80px);
+}
+
+/*タブレット幅では壁を細くする*/
+@media (max-width: 850px) {
+    .renga {
+        width: 24px;
+    }
+}
+
+/* スマホ幅では壁を消す*/
+@media (max-width: 620px) {
+    .renga {
+        display: none;
+    }
+}

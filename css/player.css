@@ -1,0 +1,346 @@
+/* MY QUEST LOG | PLAYER */
+
+/*アイコンと名前を横に並べる*/
+.profile-main {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #485270;
+}
+
+/*アイコン枠*/
+.profile-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background: #283356;
+    border-radius: 6px;
+    font-size: 2.5rem;
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.profile-job {
+    margin: 4px 0 0;
+}
+
+.profile-status {
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/*ステータスを2列×2行に並べる*/
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 22px 0 0;
+}
+
+.status-item {
+    padding: 12px 14px;
+    background: #141b34;
+    border: 1px solid #485270;
+    border-radius: 6px;
+}
+
+.status-item dt {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+}
+
+/*ddの標準の左余白を消す*/
+.status-item dd {
+    margin: 0;
+}
+
+/*ABOUT ME*/
+.about p {
+    margin: 8px 0 0;
+}
+
+/*目標の部分だけ黄色にする*/
+.about-goal {
+    color: var(--accent);
+    font-weight: normal;
+}
+
+/*GAME HISTORY*/
+.history-lead {
+    margin: 8px 0 0;
+}
+
+/*ゲーム機ごとの箱を2列に並べる*/
+.history-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.history-item {
+    padding: 12px 14px;
+    background: #141b34;
+    border: 2px solid #485270;
+    border-radius: 4px;
+}
+
+/*ゲーム機の名前*/
+.history-platform {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #485270;
+    font-size: 1rem;
+}
+
+/*「01」などの番号*/
+.history-number {
+    color: var(--accent);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+/*ゲーム名を札にして横に並べる*/
+.history-games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.history-games li {
+    padding: 1px 8px;
+    border: 1px solid #687597;
+    font-size: 0.8rem;
+}
+
+/*最後の「など」*/
+.history-more {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+/*MY GAME DATA：左にメニュー、右に詳細*/
+.game-data-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 18px;
+    align-items: start;
+    margin-top: 16px;
+}
+
+/*ゲーム選択メニュー*/
+.game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.game-button {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    color: var(--text);
+    background: #141b34;
+    border: 2px solid #485270;
+    border-radius: 4px;
+    text-align: left;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+/*▶ は普段は透明にして、幅だけ残す*/
+.game-pointer {
+    color: transparent;
+}
+
+/*選択中のゲーム（JS が is-active を付ける）*/
+.game-button.is-active {
+    color: var(--accent);
+    background: #283356;
+    border-color: var(--accent);
+}
+
+.game-button.is-active .game-pointer {
+    color: var(--accent);
+}
+
+/*選んだゲームの詳細*/
+.game-detail {
+    padding: 16px 18px;
+    background: #141b34;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+}
+
+/*★ MAIN GAME の札（メインのゲームだけ表示）*/
+.game-main-badge {
+    width: fit-content;
+    margin: 0 0 10px;
+    padding: 2px 8px;
+    color: var(--bg);
+    background: var(--accent);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+.game-detail-list {
+    margin: 0;
+}
+
+/*項目名と値を横に並べる*/
+.game-detail-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #485270;
+}
+
+.game-detail-row:last-child {
+    border-bottom: 0;
+}
+
+.game-detail-row dt {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+}
+
+.game-detail-row dd {
+    margin: 0;
+}
+
+.game-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/*切り替えたときに軽くフェードさせる*/
+.game-detail.is-changing {
+    animation: game-fade 0.25s ease-out;
+}
+
+@keyframes game-fade {
+    from {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*PHOTO LOG*/
+.photo-lead {
+    margin: 8px 0 0;
+}
+
+/*写真を3列に並べる*/
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+}
+
+/*figure の標準の余白を消す*/
+.photo-card {
+    margin: 0;
+}
+
+/*写真の枠：縦横比を4:3にそろえる*/
+.photo-frame {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    color: var(--muted);
+    background: #141b34;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+}
+
+/*枠いっぱいに写真を表示する（はみ出た部分は切り取る）*/
+.photo-frame img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    image-rendering: auto;  /* bodyのpixelatedを写真には効かせない */
+}
+
+.photo-card figcaption {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/* スマホ幅用*/
+@media (max-width: 620px) {
+    /*写真を1列にする*/
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /*ゲーム機の箱を1列にする*/
+    .history-list {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-icon {
+        width: 72px;
+        height: 72px;
+        font-size: 1.8rem;
+    }
+
+    /*ゲーム一覧の下に詳細を並べる*/
+    .game-data-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .game-detail-row {
+        grid-template-columns: 90px 1fr;
+    }
+}
+
+/*動きを減らす設定では演出を止める*/
+@media (prefers-reduced-motion: reduce) {
+    .game-detail.is-changing {
+        animation: none;
+    }
+
+    .game-button {
+        transition: none;
+    }
+}

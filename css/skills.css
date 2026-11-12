@@ -1,0 +1,67 @@
+/* MY QUEST LOG | SKILLS */
+
+.skills-lead {
+    margin: 12px 0 0;
+}
+
+/*スキルを3列に並べる*/
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*スキル1つ分の箱：上に名前、下に使った場面*/
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 14px;
+    background: #141b34;
+    border: 2px solid #485270;
+    border-radius: 4px;
+    transition: border-color 0.15s;
+}
+
+/*マウスを乗せると枠が黄色くなる*/
+.skill-item:hover {
+    border-color: var(--accent);
+}
+
+/*名前の前に ◆ を付ける*/
+.skill-name::before {
+    content: "◆ ";
+    color: var(--accent);
+}
+
+.skill-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.skill-where {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+/*動きを減らす設定では枠の色をすぐに変える*/
+@media (prefers-reduced-motion: reduce) {
+    .skill-item {
+        transition: none;
+    }
+}
+
+/*スマホ幅：2列にする*/
+@media (max-width: 620px) {
+    .skill-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .skill-item {
+        padding: 10px 12px;
+    }
+}

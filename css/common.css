@@ -1,0 +1,203 @@
+/*前ページ共通のCSS*/
+
+/*全体の色*/
+:root{
+    --bg: #101326;
+    --panel: #1b2443;
+    --text: #f5f2e8;
+    --muted: #c3c6db;
+    --accent: #facc6b;
+    --border: #e8e7d9;
+}
+
+/*paddingを内側に含める*/
+*{
+    box-sizing: border-box;
+}
+
+/*ページ内リンクのスクロール*/
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.85;
+    font-family: "DotGothic16", sans-serif;
+    image-rendering: pixelated;  /* ドットのぼやけを防ぐ */
+}
+
+/*リンクの色 */
+a {
+    color: inherit;
+}
+
+/*キーボード操作で選んだときの黄色い枠 */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/*ボタンの文字を本文と同じフォントにする */
+button {
+    font: inherit;
+}
+
+/*画面中央のコンテンツ部分 */
+.page-container {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 26px 28px 40px;
+}
+
+/*ページ上部のバー*/
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 0 0 24px;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+/*左上のサイト名*/
+.topbar .brand {
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*二重枠ウィンドウ */
+.window {
+    margin-bottom: 22px;
+    padding: 28px;
+    background: var(--panel);
+    border: 3px solid var(--border);
+    border-radius: 5px;
+    box-shadow:
+        inset 0 0 0 4px var(--panel),
+        inset 0 0 0 6px #78829d;
+}
+
+/*ウィンドウの小見出し*/
+.window-heading {
+    font-size: 0.79rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+/*見出しの行：左にタイトル、右にページ番号（PLAYER・PROJECTSなど）*/
+.window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+/*h1 の標準の余白を消す*/
+.window-header h1 {
+    margin: 0;
+}
+
+.page-number {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/*「★ MAIN QUEST」などの区切りの見出し（PROJECTS・RESEARCH）*/
+.section-heading {
+    margin: 28px 0 0;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #485270;
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+}
+
+/*「授業制作」などの小さい札を横に並べる（PROJECTS・RESEARCH）*/
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    padding: 2px 9px;
+    border: 1px solid #687597;
+    font-size: 0.8rem;
+}
+
+/*ページ下部*/
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 2px;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/*ページを開いたとき*/
+.page-container {
+    animation: quest-enter 0.35s ease-out both;
+}
+
+/*ページを離れるときに上へ消える*/
+.page-exiting .page-container {
+    animation: quest-exit 0.45s ease-in forwards;
+}
+
+@keyframes quest-enter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes quest-exit {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+/*スマホ幅(620px以下)*/
+@media (max-width: 620px) {
+    .page-container {
+        padding: 18px 14px 25px;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        font-size: 0.64rem;
+    }
+
+    .window {
+        padding: 18px;
+    }
+}
+

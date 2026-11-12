@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#101326">
+    <title>RESEARCH | MY QUEST LOG</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap">
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/research.css">
+    <script src="js/transition.js" defer></script>
+</head>
+<body class="research-page">
+    <div class="page-container">
+        <header class="topbar">
+            <a class="brand" href="index.html">★MY QUEST LOG</a>
+            <span>LV.2026</span>
+        </header>
+
+        <main id="main-content">
+            <section class="window">
+                <div class="window-header">
+                    <h1 class="window-heading">RESEARCH</h1>
+                    <span class="page-number">03 / RESEARCH</span>
+                </div>
+
+                <p class="research-lead">ゼミで取り組んだ内容と、これからの研究についてまとめています。</p>
+
+                <!--
+                    レポートPDFは、学生番号・名前を消した公開用のもの（files/seminer-01.pdf）だけを置く。
+                    画像や図を足すときは、公開してよいか確認してから。
+                -->
+
+                <!--終わった研究-->
+                <h2 class="section-heading">★ CLEARED QUEST</h2>
+                <article class="research-card">
+                    <p class="card-index">SEMINAR RESEARCH 01 / 2026 / COMPLETED</p>
+                    <h3>C++を用いた画像処理プログラム</h3>
+                    <p>2026年度のゼミ研究1で取り組んだ研究です。クライアントPCからSCPで画像をサーバへ送り、サーバ上でC++の画像処理プログラムを実行しました。PPM画像をグレースケールに変換し、しきい値を使った二値化処理を行いました。</p>
+
+                    <!--処理の流れ（左から右へ）-->
+                    <ol class="flow-list">
+                        <li>SCPで画像をサーバへ送る</li>
+                        <li>グレースケールに変換</li>
+                        <li>しきい値で二値化</li>
+                    </ol>
+
+                    <h4>実験内容</h4>
+                    <p>しきい値64・128・192で処理結果を比較し、しきい値が大きいほど黒い領域が増えることを確認しました。128では道路標識の文字や輪郭が比較的はっきり残り、192では一部の情報が失われました。</p>
+
+                    <h4>今後の課題（当時のレポートより）</h4>
+                    <p>ファイル転送・画像処理の実行の自動化と、画像に合ったしきい値を自動で決める方法の検討を挙げました。</p>
+
+                    <div class="tag-list">
+                        <span class="tag">ゼミ研究</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">SCP</span>
+                        <span class="tag">PPM / PGM</span>
+                        <span class="tag">グレースケール</span>
+                        <span class="tag">二値化</span>
+                    </div>
+
+                    <!--学生番号・名前を消した公開用のPDF-->
+                    <div class="research-links">
+                        <a class="research-link" href="files/seminer-01.pdf" target="_blank" rel="noopener">▶ レポート（PDF）</a>
+                    </div>
+                </article>
+
+                <!--これからの研究-->
+                <h2 class="section-heading">▶ NEXT QUEST</h2>
+                <article class="research-card research-card--next">
+                    <p class="card-index">GRADUATION RESEARCH / PLANNING</p>
+                    <h3>卒業研究（構想中）</h3>
+                    <p>テーマは現在検討中です。方向性が決まったら、研究の目的や計画をここに追加する予定です。</p>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <span>★ QUEST CONTINUES... ★</span>
+            <a href="index.html">◀ HOMEにもどる</a>
+        </footer>
+    </div>
+</body>
+</html>
